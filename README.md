@@ -1,58 +1,65 @@
 # Proyek Pertama Machine Learning Terapan - *Car Price Prediction*
 **Dibuat oleh Aksel E**
+
 Berikut merupakan Proyek Pertama mengenai *Predictive Analysis* untuk memprediksi harga mobil di Polandia.
 
 ## Domain Proyek
+### Latar Belakang
+<br>
+<div><img src="https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></div>
+<br>
+Ditengah kondisi zaman yang semakin berkembang pesat, kebutuhan setiap manusia pun akan semakin bertambah demi memenuhi kebutuhan harian. Salah satu kebutuhan yang dibutuhkan banyak orang ialah kendaraan. Banyak orang lebih memilih mempunyai kendaraan berupa mobil dikarenakan memiliki kenyamanan dan fungsionalitas yang lebih baik. Dengan melihat harga mobil yang semakin tinggi, beberapa orang lebih memilih membeli mobil dengan kondisi bekas dikarenakan harga yang lebih murah.
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+*Machine Learning* adalah cabang dari ilmu data yang berfokus pada pembuatan sistem yang dapat mempelajari dan membuat prediksi berdasarkan data. Dalam hal memprediksi harga mobil, dapat dibuat sebuah model *Machine Learning* yang dapat digunakan untuk mempelajari data harga mobil dan faktor-faktor yang mempengaruhinya. Kemudian, model yang dibuat ini dapat membuat prediksi harga mobil baru berdasarkan data yang diberikan. Ini sangat berguna karena memungkinkan untuk membuat estimasi harga yang akurat dan cepat dibandingkan dengan metode manual.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
+## *Business Understanding*
+
+### *Problem Statements*
+Dengan melihat latar belakang tersebut, terdapat beberapa masalah yang didapat:
+- Bagaimana melakukan pemrosesan data untuk membuat data yang baik dan dapat digunakan untuk melatih model?
+- Fitur apa yang berpengaruh terhadap harga mobil?
+- Model algoritma apa yang lebih baik dan memiliki akurasi yang tinggi untuk memprediksi harga mobil?
+
+### *Goals*
+Berikut beberapa solusi yang dapat dilakukan untuk menjawab pertanyaan di atas:
+- Melakukan pembersihan data dengan baik hingga dapat digunakan untuk melatih model.
+- Mempelajari dan melihat korelasi data agar mendapatkan fitur yang berpengaruh terhadap harga mobil.
+- Mencoba dan membandingkan beberapa model algoritma dalam hal memprediksi harga mobil.
+
+### *Solution statements*
+- Melakukan analisis data dengan sistem *Univariate Analysis* dan *Multivariate Analysis* untuk melihat korelasi antar data. Gunakan juga beberapa fitur seperti *Heat Map* untuk memastikan tingkat korelasi antar data.
+- Menggunakan dan membandingkan beberapa model algoritma (*K-Nearest Neighbor*, *Random Forest*, dan *AdaBoost*) serta mengubah nilai *Hyper Parameter* guna mencapai nilai akurasi yang maksimal.
+
+## *Data Understanding*
+Data yang digunakan dalam proyek ini merupakan data harga mobil di Polandia dengan beberapa karakteristik dari mobil tersebut. Dalam *dataset* ini, terdapat sekitar 118 ribu data dengan 10 kolom didalamnya. Data ini dapat diunduh dari situs Kaggle.
+
+*Link* menuju data: [Car Price in Poland](https://www.kaggle.com/datasets/aleksandrglotov/car-prices-poland)
+
+### Berikut merupakan beberapa kolom yang terdapat dalam *dataset* *Car Price in Poland*:
+- mark : Merupakan merek dari mobil.
+- model : Merupakan model dari merek mobil yang tercantum dalam kolom sebelumnya.
+- generation_name : Merupakan nama generasi dari model yang tercantum dalam kolom sebelumnya.
+- year : Berupa tahun berapa mobil tersebut diproduksi.
+- mileage : Berupa seberapa jauh mobil tersebut telah digunakan dalam satuan Kilometer.
+- vol_engine : Berupa seberapa besar kapasitas mesin yang digunakan dalam mobil tersebut.
+- fuel : Merupakan jenis bahan bakar yang digunakan mobil tersebut.
+- city : Merupakan kota asal mobil tersebut digunakan.
+- province : Merupakan provinsi asal mobil tersebut digunakan.
+- price : Harga mobil dalam satuan Polish Zloty.
+
+Dari 10 kolom yang ada dalam *dataset*, kolom model dan generation_name tidak digunakan karena dapat digantikan dengan kolom year dan vol_engine serta tidak memiliki korelasi dengan harga mobil.
+
+Untuk melihat korelasi antar kolom dengan harga mobil, digunakan 2 analisis berikut:
+
+### *Univariate Analysis*:
+Ini merupakan analisis yang digunakan untuk melihat jenis yang ada dalam satu kolom saja. Dalam analisis ini, data numerikal dan data kategorikal akan dipisahkan.
+- **Data Kategorikal**
+  - **mark**
   
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
+    Terdapat 23 jenis merek dalam kolom mark ini, dengan merek *Audi* dan *Opel* yang memiliki data terbanyak sebesar masing-masing ~10%.
+    ![image](https://user-images.githubusercontent.com/116968275/216390693-e8fc2d13-6e68-40ce-a5d3-2f3cfc3c5eba.png)
 
-## Business Understanding
-
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
-### Problem Statements
-
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
-
-### Goals
-
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
-
-## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
-
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+ 
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
