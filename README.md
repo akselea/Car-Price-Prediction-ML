@@ -57,7 +57,9 @@ Ini merupakan analisis yang digunakan untuk melihat jenis yang ada dalam satu ko
   - **mark**
   
     Terdapat 23 jenis merek dalam kolom mark ini, dengan merek *Audi* dan *Opel* yang memiliki data terbanyak sebesar masing-masing ~10%.
-    ![image](https://user-images.githubusercontent.com/116968275/216390693-e8fc2d13-6e68-40ce-a5d3-2f3cfc3c5eba.png)
+    
+    <img width="288" alt="image" src="https://user-images.githubusercontent.com/116968275/216391713-709812c9-146b-4e2b-a8b9-482f57f9d7cd.png">
+
 
  
 
