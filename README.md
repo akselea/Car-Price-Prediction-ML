@@ -134,14 +134,39 @@ Ini merupakan analisis yang digunakan untuk melihat korelasi antar kolom. Dalam 
     Jika kita lihat berdasarkan *Heat Map* yang sudah dibuat, *Heat Map* ini menjadi bukti penguat dari apa yang sudah disimpulkan dari *Pairplot* yang telah dibuat. Terlihat jika nilai tahun produksi mobil (*year*) memiliki korelasi positif terhadap harga mobil dan jarak tempuh mobil (*mileage*) memiliki korelasi negatif terhadap harga mobil.
     
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Dalam bagian ini, ada beberapa hal yang akan dilakukan guna menunjang data yang baik untuk digunakan untuk melatih model.
+- ***One-Hot Encoding***
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+  *One-Hot Encoding* merupakan suatu teknik yang digunakan untuk mengubah data kategorikal menjadi data numerik, dikarenakan model hanya bisa mengenali satu jenis data saja. Teknik ini dilakukan dengan cara menggunakan fungsi `get_dummies()` yang dapat mengubah data kategorikal menjadi kolom baru dengan data 0 atau 1.
+  
+  <img width="793" alt="image" src="https://user-images.githubusercontent.com/116968275/216556026-cb2dda6c-62db-4fac-a763-cf0facb583cd.png">
+
+- ***Train-Test Split***
+
+  *Train-Test Split* merupakan suatu fungsi yang digunakan untuk memecahkan data menjadi data latih dan data uji. Dalam pengaplikasiannya, digunakan rasio antara data latih dan data uji guna menghindari model menjadi *overfit* atau *underfit*. Dalam kasus prediksi harga mobil ini, digunakan rasio 90:10 dikarenakan terdapat ~100000 data dalam *dataset* ini.
+  
+  <img width="442" alt="image" src="https://user-images.githubusercontent.com/116968275/216556787-f018890f-0093-497c-9903-dcbdbc7cd7d6.png">
+  
+- **Standarisasi Data**
+
+  Model *machine learning* dilatih menggunakan data yang sudah diproses sebelumnya agar nantinya memiliki performa dan akurasi yang baik. Model ini dapat dilatih lebih baik dan cepat jika data yang sudah kita proses sebelumnya memiliki nilai yang seragam dan memiliki skala yang relatif sama. Untuk memenuhi hal tersebut dapat digunakan fungsi `Standard_Scaler()` dari *library sklearn*. Fungsinya adalah agar data yang akan kita pakai untuk model memiliki nilai *mean* = 0 dan nilai standar deviasi = 1.
+  
+  <img width="247" alt="image" src="https://user-images.githubusercontent.com/116968275/216558184-e306eeb8-fe19-44e6-af13-b680bcd69f96.png">
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Pada tahap ini, akan dilakukan pengujian dan pelatihan model menggunakan 3 algoritma (*K-Nearest Neighbor*, *Random Forest*, dan *AdaBoost*)
+
+- ***K-Nearest Neighbor***
+
+  asdasd
+
+- ***Random Forest***
+
+  asdasd
+  
+- ***AdaBoost***
+
+  asdasd
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
