@@ -158,35 +158,92 @@ Pada tahap ini, akan dilakukan pengujian dan pelatihan model menggunakan 3 algor
 
 - ***K-Nearest Neighbor***
 
-  asdasd
+  *K-Nearest Neighbor* merupakan salah satu algoritma yang bekerja dengan cara membandingkan jarak satu sampel dengan sampel lain dengan cara memilih jumlah k tetangga terdekat. 
+  
+  Dalam algoritma *K-Nearest Neighbor*, terdapat *hyperparameter* yang dapat disesuaikan guna meningkatkan performa model:
+  - `n_neighbor` : Merupakan jumlah k tetangga terdekat.
+
+  Selain itu, terdapat beberapa kelebihan dan kekurangan dari algoritma *K-Nearest Neighbor* ini:
+  - **Kelebihan**
+
+    1. Metode ini cenderung lebih sederhana dan mudah dipahami dibandingkan dengan algoritma lain.
+    2. Metode ini pun tidak memerlukan pemodelan, menjadikan algoritma ini dapat memangkas waktu dalam membangun model.
+
+  - **Kekurangan**
+
+    1. Kinerjanya yang terhitung lambat dikarenakan harus membandingkan jarak satu sampel dengan sampel yang lain.
+    2. Prediksi dari metode ini dapat sangat berubah walaupun hanya merubah nilai `n_neighbor`, maka dari itu diperlukan nilai k yang pas dan sesuai dengan data yang digunakan.
 
 - ***Random Forest***
 
-  asdasd
+  *Random Forest* merukapan algoritma yang bekerja dengan cara menjalankan beberapa model sekaligus dan membandingkan hasil akhirnya. Dalam penggunaannya, algoritma *Random Forest* menggunakan banyak *decision tree* yang dibangun secara acak dari dataset yang ada. Nantinya, hasil akhir dari algoritma ini adalah gabungan dari hasil akhir beberapa *decision tree* yang telah dijalankan. 
+  
+  Terdapat beberapa *hyperparameter* dalam algoritma ini:
+  - `n_estimator` : Ini merupakan berapa banyak *decision tree* yang akan dijalankan dalam model.
+  - `max_depth` : Merupakan nilai dari seberapa dalam *decision tree* akan melakukan percabangan.
+  - `random_state` : Merupakan nilai untuk mengontrol *seed* dari model yang akan dijalankan.
+
+  Ada juga kelebihan dan kekurangan dari algoritma ini:
+  - **Kelebihan**
+
+    1. Metode ini memiliki akurasi yang tinggi dikarenakan model menjalankan beberapa *decision tree* secara bersamaan, dan dapat menghindari masalah *overfit* pada model.
+
+  - **Kekurangan**
+
+    1. Dalam pelatihannya, algoritma *Random Forest* memerlukan waktu yang lebih lama dikarenakan menjalankan banyak *decision tree* secara bersamaan.
   
 - ***AdaBoost***
 
-  asdasd
+  *AdaBoost (Adapive Boost)* merupakan salah satu algoritma yang memiliki cara kerja menggabungkan beberapa model yang nantinya dapat memperbaiki akurasi dan stabilitas dari model. *AdaBoost* bekerja dengan cara menempatkan bobot lebih kepada data yang sebelumnya tidak diprediksi benar oleh model sebelumnya, nantinya model selanjutnya akan memberi fokus lebih pada data tersebut dan akhirnya meningkatkan akurasi dari model tersebut. Proses ini dilakukan berulang hingga mencapai nilai akurasi yang tinggi.
+  
+  Ada beberapa *hyperparameter* yang dapat diatur guna meningkatkan performa dari algoritma ini:
+  - `learning_rate` : Merupakan nilai dari laju pembelajaran model.
+  - `random_state` : Merupakan nilai untuk mengontrol *seed* dari model yang akan dijalankan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+  Adapun kelebihan dan kekurangan dari algoritma ini:
+  - **Kelebihan**
+
+    1. Metode ini memiliki akurasi yang tinggi jika dibandingkan dengan metode sederhana lainnya (Contohnya seperti *Random Forest*).
+
+  - **Kekurangan**
+
+    1. Algoritma ini biasanya rentan dengan data *outlier* dan membutuhkan waktu lama dalam proses latih dikarenakan menggabungkan beberapa jenis model dalam penggunaannya.
+
+Dengan menggunakan ketiga algortima diatas serta mencari nilai *hyperparameter* yang paling baik, didapatkan hasil sebagai berikut:
+
+| Model               | *Hyperparameter* Terbaik                                   |
+|---------------------|------------------------------------------------------------|
+| K-Nearest Neighbor  | `n_neighbor` : 4                                           |
+| AdaBoost            | `learning_rate` : 0.08, `random_state` : 55                |
+| Random Forest       | `n_estimator` : 50, `max_depth` : 64, `random_state` : 55  |
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Untuk mengevaluasi hasil kinerja model yang telah dibangun, dalam kasus ini digunakan metrik MSE (*Mean Squared Error*). Metrik ini bekerja dengan cara melihat selisih dari nilai asli (*y_true*) dengan hasil prediksi dari masing-masing model. 
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+![image](https://user-images.githubusercontent.com/116968275/216582083-3a912459-5489-4e29-a7c8-4f7d0b3a12c0.png)
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+**Penjelasan**:
+- MSE : *Mean Squared Error*
+- yi : Nilai asli (*y_true*)
+- y_pred : Nilai prediksi model
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Dengan menggunakan MSE, berikut hasil dari setiap model algortima yang digunakan:
 
-**---Ini adalah bagian akhir laporan---**
+| Model               | Train            | Test             |
+|---------------------|------------------|------------------|
+| K-Nearest Neighbor  | 520014.135924    | 732296.875684    |
+| AdaBoost            | 1838754.256309   | 1703197.195434   |
+| Random Forest       | 184651.209957    | 589524.177038    |
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+<img width="339" alt="image" src="https://user-images.githubusercontent.com/116968275/216583247-26c4840a-e6c8-4a5f-b40b-def19d131a00.png">
+
+Berikut juga hasil prediksi dari setiap model jika dibandingkan dengan nilai *y_true* dari *dataset*:
+
+| Model               | Train            |
+|---------------------|------------------|
+| y_true              | 76000            |
+| K-Nearest Neighbor  | 51625            |
+| AdaBoost            | 78337.3          |
+| Random Forest       | 52459.8          |
+
+Melihat hasil di atas, maka model yang menggunakan algoritma *AdaBoost* merupakan model dengan nilai akurasi yang paling tinggi serta memiliki nilai error yang paling kecil jika dibandingkan dengan model *K-Nearest Neighbor* dan *Random Forest*.
