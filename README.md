@@ -239,7 +239,7 @@ Dengan menggunakan MSE, berikut hasil dari setiap model algortima yang digunakan
 
 Berikut juga hasil prediksi dari setiap model jika dibandingkan dengan nilai *y_true* dari *dataset*:
 
-| Model               | Train            |
+| Model               | Hasil Prediksi   |
 |---------------------|------------------|
 | y_true              | 76000            |
 | K-Nearest Neighbor  | 51625            |
