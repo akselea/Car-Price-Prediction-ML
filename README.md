@@ -145,8 +145,11 @@ Dalam bagian ini, ada beberapa hal yang akan dilakukan guna menunjang data yang 
 
   *Train-Test Split* merupakan suatu fungsi yang digunakan untuk memecahkan data menjadi data latih dan data uji. Dalam pengaplikasiannya, digunakan rasio antara data latih dan data uji guna menghindari model menjadi *overfit* atau *underfit*. Dalam kasus prediksi harga mobil ini, digunakan rasio 90:10 dikarenakan terdapat ~100000 data dalam *dataset* ini.
   
-  <img width="442" alt="image" src="https://user-images.githubusercontent.com/116968275/216556787-f018890f-0093-497c-9903-dcbdbc7cd7d6.png">
-  
+  Hasil dari pembagian data latih dan data uji dengan fungsi *Train-Test Split* dengan menggunakan rasio 90:10 adalah sebagai berikut:
+  - Total Data Keseluruhan: 103712
+  - Total Data Latih: 93340
+  - Total Data Uji: 10372
+    
 - **Standarisasi Data**
 
   Model *machine learning* dilatih menggunakan data yang sudah diproses sebelumnya agar nantinya memiliki performa dan akurasi yang baik. Model ini dapat dilatih lebih baik dan cepat jika data yang sudah kita proses sebelumnya memiliki nilai yang seragam dan memiliki skala yang relatif sama. Untuk memenuhi hal tersebut dapat digunakan fungsi `Standard_Scaler()` dari *library sklearn*. Fungsinya adalah agar data yang akan kita pakai untuk model memiliki nilai *mean* = 0 dan nilai standar deviasi = 1.
