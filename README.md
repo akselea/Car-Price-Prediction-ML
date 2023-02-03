@@ -154,7 +154,16 @@ Dalam bagian ini, ada beberapa hal yang akan dilakukan guna menunjang data yang 
 
   Model *machine learning* dilatih menggunakan data yang sudah diproses sebelumnya agar nantinya memiliki performa dan akurasi yang baik. Model ini dapat dilatih lebih baik dan cepat jika data yang sudah kita proses sebelumnya memiliki nilai yang seragam dan memiliki skala yang relatif sama. Untuk memenuhi hal tersebut dapat digunakan fungsi `Standard_Scaler()` dari *library sklearn*. Fungsinya adalah agar data yang akan kita pakai untuk model memiliki nilai *mean* = 0 dan nilai standar deviasi = 1.
   
-  <img width="247" alt="image" src="https://user-images.githubusercontent.com/116968275/216558184-e306eeb8-fe19-44e6-af13-b680bcd69f96.png">
+|  year |    mileage | vol_engine |            |   |
+|------:|-----------:|-----------:|------------|---|
+| count | 93340.0000 | 93340.0000 | 93340.0000 |   |
+|  mean |    -0.0000 |     0.0000 |    -0.0000 |   |
+|  std  |     1.0000 |     1.0000 |     1.0000 |   |
+|  min  |    -8.8020 |    -1.5912 |    -1.3902 |   |
+|  25%  |    -0.6868 |    -0.7711 |    -0.5681 |   |
+|  50%  |     0.0346 |     0.0600 |    -0.0772 |   |
+|  75%  |     0.7559 |     0.6592 |     0.2506 |   |
+|  max  |     1.6576 |    29.4388 |     7.8233 |   |
 
 ## Modeling
 Pada tahap ini, akan dilakukan pengujian dan pelatihan model menggunakan 3 algoritma (*K-Nearest Neighbor*, *Random Forest*, dan *AdaBoost*)
