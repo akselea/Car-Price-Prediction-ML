@@ -60,9 +60,78 @@ Ini merupakan analisis yang digunakan untuk melihat jenis yang ada dalam satu ko
     
     <img width="288" alt="image" src="https://user-images.githubusercontent.com/116968275/216391713-709812c9-146b-4e2b-a8b9-482f57f9d7cd.png">
 
+  - **fuel**
+  
+    Terdapat 6 jenis bahan bakar yang digunakan dalam *dataset* ini dengan pemakaian bahan bakar terbanyak ialah *Gasoline* dan *Diesel*.
+    
+    <img width="290" alt="image" src="https://user-images.githubusercontent.com/116968275/216534073-f85ba1bd-fce6-40b7-8d80-1966e9e36eaf.png">
 
- 
+    Melihat pemerataan data yang kurang baik serta masih kurang banyak pemakaian bahan bakar selain *Gasoline* dan *Diesel*, maka data mobil yang menggunakan bahan bakar selain *Gasoline* dan *Diesel* akan dihapus.
 
+    <img width="289" alt="image" src="https://user-images.githubusercontent.com/116968275/216534162-d36b171a-e890-44cf-af6b-f4ff08b839d0.png">
+
+  - **city**
+
+    Dalam kolom *city* ini, terdapat 4224 kota yang terdaftar dalam *dataset*. Dengan melihat jumlah kota yang sangat banyak ini, maka kolom *city* akan dihapus dan digantikan oleh kolom *province* yang dapat menggantikan fungsi kolom *city*.
+    
+    <img width="239" alt="image" src="https://user-images.githubusercontent.com/116968275/216534966-9a692248-f3ec-4c42-9057-01fcf21cac1d.png">
+    <br>
+    <img width="288" alt="image" src="https://user-images.githubusercontent.com/116968275/216535042-8f34df7a-9520-4d9b-882c-6270ae76ccb9.png">
+
+  - **province**
+
+    Dalam kolom *province*, terdapat 22 provinsi yang terdaftar. Jika kita lihat kembali, terdapat satu provinsi dengan nama "(" yang dimana data tersebut sudah pasti berupa *error*.
+    
+    <img width="289" alt="image" src="https://user-images.githubusercontent.com/116968275/216535766-073d1039-6384-4b06-99e4-082e96944fe7.png">
+
+    Dengan melihat pemerataan data yang kurang baik juga, maka provinsi dengan jumlah data dibawah 2000 akan dihapus.
+    
+    <img width="289" alt="image" src="https://user-images.githubusercontent.com/116968275/216535927-62128eb3-c71a-4ac1-a7fc-0134f995a0a6.png">
+
+- **Data Numerikal**
+  
+    <img width="666" alt="image" src="https://user-images.githubusercontent.com/116968275/216536393-e85da033-9caa-476f-9504-ee5f25bb10f8.png">
+
+    Berikut beberapa informasi yang dapat diambil dari grafik di atas:
+    - Dataset ini banyak mengandung data mobil dengan tahun produksi diatas tahun 2000.
+    - Kebanyakan mobil pada *dataset* ini menempuh jarak berkisar dari 10 km hingga 224000 km.
+    - Semakin rendah jarak tempuh mobil, maka harga mobil itupun semakin tinggi.
+    - Dataset ini banyak mengandung mobil dengan volume mesin 1000cc hingga 2000cc.
+
+### *Multivariate Analysis*:
+Ini merupakan analisis yang digunakan untuk melihat korelasi antar kolom. Dalam analisis ini, data numerikal dan data kategorikal akan dipisahkan.
+- **Data Kategorikal**
+    - **Korelasi antara *price* dengan *mark***
+
+      <img width="960" alt="image" src="https://user-images.githubusercontent.com/116968275/216543954-02269cc8-f9cf-43e9-b1a6-591521cd307e.png">
+
+      Beberapa merek mobil memiliki pengaruh terhadap harga mobil, tetapi kebanyakan merek mobil tersebut merupakan sebuah *luxury brand* dimana harga mobilnya sudah pasti tinggi (*Mercedes Benz*, *BMW*, *Audi*, dan *Volvo*).
+      
+    - **Korelasi antara *price* dengan *fuel***
+
+      <img width="960" alt="image" src="https://user-images.githubusercontent.com/116968275/216544047-b2b3f154-0176-4ba2-b709-6f2e5e7b89e9.png">
+
+      Jenis bahan bakar tidak memiliki pengaruh terhadap harga mobil.
+      
+    - **Korelasi antara *price* dengan *province***
+
+      <img width="960" alt="image" src="https://user-images.githubusercontent.com/116968275/216544137-e0222b9f-f30a-491c-85e2-fab8c61cbee2.png">
+
+      Provinsi asal mobil tidak memiliki pengaruh terhadap harga mobil, walaupun ada beberapa provinsi yang memiliki harga mobil lebih tinggi dibandingkan dengan provinsi lain.
+
+- **Data Numerikal**
+  - ***Pairplot***
+
+    <img width="449" alt="image" src="https://user-images.githubusercontent.com/116968275/216545855-072042ee-a49f-4f69-98f4-bfa726bb69c2.png">
+
+    Berdasarkan *Pairplot* di atas, terlihat jika nilai kapasitas mesin(*vol_engine*) tidak memiliki pengaruh terhadap harga mobil, dikarenakan sebaran data yang terlihat acak dan tidak memiliki pola. Untuk tahun produksi mobil (*year*), terlihat jika semakin tinggi tahun mobil (Mendekati tahun sekarang) maka akan semakin tinggi pula harganya dan dibuktikan dengan adanya pola data positif. Untuk jarak tempuh mobil (*mileage*), datanya memiliki korelasi negatif dengan harga mobil yang dimana semakin tinggi jarak tempuh mobil maka harganya akan semakin rendah.
+    
+  - ***Heat Map***
+
+    <img width="419" alt="image" src="https://user-images.githubusercontent.com/116968275/216545921-58f58eda-c559-49f4-817f-ec484be84ef7.png">
+
+    Jika kita lihat berdasarkan *Heat Map* yang sudah dibuat, *Heat Map* ini menjadi bukti penguat dari apa yang sudah disimpulkan dari *Pairplot* yang telah dibuat. Terlihat jika nilai tahun produksi mobil (*year*) memiliki korelasi positif terhadap harga mobil dan jarak tempuh mobil (*mileage*) memiliki korelasi negatif terhadap harga mobil.
+    
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
