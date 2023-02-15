@@ -161,7 +161,7 @@ Ini merupakan analisis yang digunakan untuk melihat korelasi antar kolom. Dalam 
 
     Jika kita lihat berdasarkan *Heat Map* yang sudah dibuat, *Heat Map* ini menjadi bukti penguat dari apa yang sudah disimpulkan dari *Pairplot* yang telah dibuat. Terlihat jika nilai tahun produksi mobil (*year*) memiliki korelasi positif terhadap harga mobil dan jarak tempuh mobil (*mileage*) memiliki korelasi negatif terhadap harga mobil.
     
-## Data Preparation
+## *Data Preparation*
 Dalam bagian ini, ada beberapa hal yang akan dilakukan guna menunjang data yang baik untuk digunakan untuk melatih model.
 - ***One-Hot Encoding***
 
@@ -203,7 +203,7 @@ Dalam bagian ini, ada beberapa hal yang akan dilakukan guna menunjang data yang 
   |  75%  |     0.7559 |     0.6592 |     0.2506 |
   |  max  |     1.6576 |    29.4388 |     7.8233 |
 
-## Modeling
+## *Modeling*
 Pada tahap ini, akan dilakukan pengujian dan pelatihan model menggunakan 3 algoritma (*K-Nearest Neighbor*, *Random Forest*, dan *AdaBoost*)
 
 - ***K-Nearest Neighbor***
