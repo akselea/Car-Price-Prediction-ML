@@ -12,7 +12,6 @@ Berikut merupakan Proyek Pertama mengenai *Predictive Analysis* untuk memprediks
 Gambar 1. Kumpulan Kendaraan di Jalanan Sore Hari
 
 Ditengah kondisi zaman yang semakin berkembang pesat, kebutuhan setiap manusia pun akan semakin bertambah demi memenuhi kebutuhan harian. Salah satu kebutuhan yang dibutuhkan banyak orang ialah kendaraan. Banyak orang lebih memilih mempunyai kendaraan berupa mobil dikarenakan memiliki kenyamanan dan fungsionalitas yang lebih baik. Dengan melihat harga mobil yang semakin tinggi, beberapa orang lebih memilih membeli mobil dengan kondisi bekas dikarenakan harga yang lebih murah.
-<br><br>
 
 *Machine Learning* adalah cabang dari ilmu data yang berfokus pada pembuatan sistem yang dapat mempelajari dan membuat prediksi berdasarkan data. Dalam hal memprediksi harga mobil, dapat dibuat sebuah model *Machine Learning* yang dapat digunakan untuk mempelajari data harga mobil dan faktor-faktor yang mempengaruhinya. Kemudian, model yang dibuat ini dapat membuat prediksi harga mobil baru berdasarkan data yang diberikan. Ini sangat berguna karena memungkinkan untuk membuat estimasi harga yang akurat dan cepat dibandingkan dengan metode manual.
 
